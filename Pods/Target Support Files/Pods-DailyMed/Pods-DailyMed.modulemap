@@ -1,0 +1,6 @@
+framework module Pods_DailyMed {
+  umbrella header "Pods-DailyMed-umbrella.h"
+
+  export *
+  module * { export * }
+}

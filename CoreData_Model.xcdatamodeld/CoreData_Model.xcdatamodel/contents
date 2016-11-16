@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Details" syncable="YES">
+        <attribute name="docAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="docContactNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="docName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergContactNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergGiveName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergSurName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userAllergy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userGiveName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userSurName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DoseProfile" syncable="YES">
+        <attribute name="interval" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="dosetimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DoseTime" syncable="YES"/>
+        <relationship name="reminder_ids" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReminderID" syncable="YES"/>
+    </entity>
+    <entity name="DoseTime" syncable="YES">
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Medication" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="doseprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DoseProfile" syncable="YES"/>
+    </entity>
+    <entity name="ReminderID" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Details" positionX="-36" positionY="-108" width="128" height="180"/>
+        <element name="DoseProfile" positionX="153" positionY="24" width="128" height="88"/>
+        <element name="DoseTime" positionX="241" positionY="153" width="128" height="58"/>
+        <element name="Medication" positionX="295" positionY="-90" width="128" height="105"/>
+        <element name="ReminderID" positionX="63" positionY="153" width="128" height="58"/>
+    </elements>
+</model>
